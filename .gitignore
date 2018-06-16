@@ -1,27 +1,43 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Node template
-# Logs
-logs
-*.log
-npm-debug.log*
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# compiled output
+/dist
+/tmp
+/out-tsc
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+# dependencies
+/node_modules
 
-# Dependency directories
-node_modules/
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# TypeScript v1 declaration files
-typings/
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Optional npm cache directory
-.npm
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
-# Optional eslint cache
-.eslintcache
+# System Files
+.DS_Store
+Thumbs.db
 
 # dotenv environment variables file
 .env
-
-
+/server/client/

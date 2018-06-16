@@ -1,13 +1,10 @@
 'use strict';
 
+const serve = require('koa-static');
 const Koa = require('koa');
-const Router = require('koa-router');
 
 const app = new Koa();
-const router = new Router();
 
-router.get('/', require('./actions/get'));
-
-app.use(router.middleware());
+app.use(serve(__dirname + '/client'));
 
 module.exports = app;
