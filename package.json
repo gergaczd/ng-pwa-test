@@ -11,5 +11,9 @@
   "scripts": {
     "start": "node server",
     "start-dev": "node -r dotenv/config server"
+  },
+  "engines" : {
+    "node": "10.1.0",
+    "npm": "5.6.0"
   }
 }
