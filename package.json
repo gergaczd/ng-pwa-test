@@ -1,0 +1,15 @@
+{
+  "name": "ng-pwa-test",
+  "version": "0.0.1",
+  "dependencies": {
+    "koa": "2.5.1",
+    "koa-router": "7.4.0"
+  },
+  "devDependencies": {
+    "dotenv": "6.0.0"
+  },
+  "scripts": {
+    "start": "node server",
+    "start-dev": "node -r dotenv/config server"
+  }
+}
