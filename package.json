@@ -7,9 +7,10 @@
     "start-dev": "node -r dotenv/config server",
     "ng": "ng",
     "build": "ng build",
+    "build-prod": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build-prod"
   },
   "private": true,
   "dependencies": {
