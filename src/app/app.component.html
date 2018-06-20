@@ -1,6 +1,7 @@
 <h2>This should be a beautiful ng app from heroku</h2>
-<a routerLink="/first">First</a>
-<a routerLink="/second">Second</a>
+<p [class]="networkState | async">{{ networkState | async }}</p>
+<a routerLink="/first" routerLinkActive="active">First</a>
+<a routerLink="/second" routerLinkActive="active">Second</a>
 <div [@routerTransition]="getState(o)">
   <router-outlet #o="outlet"></router-outlet>
 </div>
