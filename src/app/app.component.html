@@ -1,7 +1,14 @@
-<h2>This should be a beautiful ng app from heroku</h2>
-<p [class]="networkState | async">{{ networkState | async }}</p>
-<a routerLink="/first" routerLinkActive="active">First</a>
-<a routerLink="/second" routerLinkActive="active">Second</a>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="example-icon">fingerprint</mat-icon>
+    <span>Ng PWA Test</span>
+
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/first">First</button>
+    <button mat-button routerLink="/second">Second</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div [@routerTransition]="getState(o)">
   <router-outlet #o="outlet"></router-outlet>
 </div>

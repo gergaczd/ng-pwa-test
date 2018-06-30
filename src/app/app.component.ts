@@ -2,9 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {routerTransition} from './animation/router';
 import {Observable} from 'rxjs/internal/Observable';
 import {fromEvent} from 'rxjs/internal/observable/fromEvent';
-import {map} from 'rxjs/operators';
 import {merge} from 'rxjs/internal/observable/merge';
-import {of} from 'rxjs/internal/observable/of';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'npt-root',
@@ -14,25 +13,21 @@ import {of} from 'rxjs/internal/observable/of';
 })
 export class AppComponent implements OnInit {
 
-  public networkState: Observable<string>;
-
   private offline: Observable<any>;
   private online: Observable<any>;
 
-  constructor() {
-  }
+  constructor(private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.offline = fromEvent(window, 'offline');
     this.online = fromEvent(window, 'online');
 
-    const type = navigator.onLine ? 'online' : 'offline';
-    this.networkState = merge(
-      of({ type }), this.offline, this.online
-    ).pipe(map(({ type }) => type));
+    merge(this.offline, this.online).subscribe(({ type }) => {
+      this.snackBar.open(type, 'OK', { duration: 3000 });
+    });
   }
 
-  getState(outlet) {
+  public getState(outlet) {
     return outlet.activatedRouteData.state;
   }
 }

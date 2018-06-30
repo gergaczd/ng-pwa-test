@@ -10,14 +10,11 @@ h2 {
     font-weight: lighter;
 }
 
-.online {
-    color: green;
+.example-spacer {
+    flex: 1 1 auto;
 }
 
-.offline {
-    color: red;
-}
 
-.active {
-    opacity: 0.5;
+.example-icon  {
+    padding: 0 14px;
 }
